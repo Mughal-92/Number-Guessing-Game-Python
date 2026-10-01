@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct  1 16:25:59 2026
-
-@author: mamug
-"""
-
 import random
 
 
