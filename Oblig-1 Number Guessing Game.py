@@ -7,7 +7,7 @@ maxAttempts = 5
 attempts = 0
 playAgain = "y"
 continueGame = True
-
+attemptsRemaining = maxAttempts - attempts
 randomNumber = random.randint(numberMin, numberMax)
 
 def playAgain():
@@ -23,6 +23,7 @@ def playAgain():
         continueGame = False
 
 while continueGame:
+    print(f"You have {maxAttempts - attempts} attempt(s) remaining.")
     guess = (input("Type a number between 0 - 100: "))
     if guess.isdigit():
         guess = int(guess)
