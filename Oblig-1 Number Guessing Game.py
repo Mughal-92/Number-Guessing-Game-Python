@@ -1,11 +1,11 @@
 import random
 
 
-numberMin = 0
+numberMin = 1
 numberMax = 100
 maxAttempts = 5
 attempts = 0
-playAgain = "y"
+playAgain = "yes"
 continueGame = True
 attemptsRemaining = maxAttempts - attempts
 randomNumber = random.randint(numberMin, numberMax)
@@ -14,13 +14,18 @@ def playAgain():
     global continueGame
     global randomNumber
     global attempts
-    playAgain = input("Do you want to play again? (y/n): ")
-    if playAgain == "y":
-        randomNumber = random.randint(numberMin, numberMax)
-        attempts = 0
-        continueGame = True
-    else:
-        continueGame = False
+    while True:
+        response = input("Do you want to play again? (YES/NO): ").lower()
+        if response == "yes":
+            randomNumber = random.randint(numberMin, numberMax)
+            attempts = 0
+            continueGame = True
+            return
+        elif response == "no":
+            continueGame = False
+            return
+        print("Please enter a valid response (YES/NO).")
+
 
 while continueGame:
     print(f"You have {maxAttempts - attempts} attempt(s) remaining.")
@@ -40,6 +45,7 @@ while continueGame:
         
     elif guess == randomNumber:
         print(f"Congratulations! You guessed the number in {attempts} attempt(s).!")
+        print(f"The number was: {randomNumber}")
         playAgain()
         
     if attempts == maxAttempts:
@@ -49,7 +55,6 @@ while continueGame:
     if not continueGame:
         print("Thank you for playing! Goodbye!")
         break
-
 
 
 
