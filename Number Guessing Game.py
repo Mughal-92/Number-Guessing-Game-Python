@@ -5,7 +5,6 @@ numberMin = 1
 numberMax = 100
 maxAttempts = 5
 attempts = 0
-playAgain = "yes"
 continueGame = True
 attemptsRemaining = maxAttempts - attempts
 randomNumber = random.randint(numberMin, numberMax)
@@ -55,8 +54,3 @@ while continueGame:
     if not continueGame:
         print("Thank you for playing! Goodbye!")
         break
-
-
-
-
-
